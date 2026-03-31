@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMHY 中文镜像站 | 免费媒体资源导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .mirror-badge {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            font-size: 2em;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .original-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .original-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .search-section {
+            margin: 20px 0;
+        }
+        
+        #search-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        #search-input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+        
+        .quick-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .quick-link {
+            background: #f0f0f0;
+            color: #333;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .quick-link:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .card-icon {
+            font-size: 2.5em;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+        }
+        
+        .card-title {
+            font-size: 1.5em;
+            color: #333;
+            font-weight: 700;
+        }
+        
+        .card-description {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .card-links {
+            list-style: none;
+        }
+        
+        .card-links li {
+            margin: 10px 0;
+        }
+        
+        .card-links a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .card-links a:hover {
+            background: #f0f0f0;
+            color: #764ba2;
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .disclaimer {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+            border-left: 4px solid #f5576c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: left;
+        }
+        
+        .disclaimer h3 {
+            color: #d32f2f;
+            margin-bottom: 10px;
+        }
+        
+        .disclaimer p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            header {
+                padding: 20px;
+            }
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="mirror-badge">📡 中文镜像站</div>
+            <h1><span class="logo">📚</span> FMHY 中文镜像站</h1>
+            <p class="subtitle">免费媒体资源导航 - 完全本地化，极速访问</p>
+            <a href="https://fmhy.net" target="_blank" class="original-link">🌐 访问官方网站</a>
+            
+            <div class="search-section">
+                <input type="text" id="search-input" placeholder="🔍 搜索资源分类...">
+            </div>
+            
+            <div class="quick-links">
+                <a href="#adblock" class="quick-link">🔒 广告拦截</a>
+                <a href="#ai" class="quick-link">🤖 人工智能</a>
+                <a href="#streaming" class="quick-link">📺 视频</a>
+                <a href="#music" class="quick-link">🎵 音乐</a>
+                <a href="#gaming" class="quick-link">🎮 游戏</a>
+                <a href="#reading" class="quick-link">📖 阅读</a>
+            </div>
+        </header>
+        
+        <div class="grid" id="content-grid">
+            <div class="card" id="adblock">
+                <div class="card-header">
+                    <div class="card-icon">🛡️</div>
+                    <div class="card-title">广告拦截与隐私</div>
+                </div>
+                <p class="card-description">广告拦截、隐私保护、VPN、代理、杀毒软件</p>
+                <ul class="card-links">
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Adblock" target="_blank">📖 广告拦截指南</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Privacy" target="_blank">🔒 隐私保护</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/VPNs" target="_blank">🌐 VPN推荐</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Antivirus" target="_blank">🦠 杀毒软件</a></li>
+                </ul>
+            </div>
+            
+            <div class="card" id="ai">
+                <div class="card-header">
+                    <div class="card-icon">🤖</div>
+                    <div class="card-title">人工智能</div>
+                </div>
+                <p class="card-description">聊天机器人、文本生成、图像生成、AI工具</p>
+                <ul class="card-links">
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Artificial-Intelligence" target="_blank">💬 AI聊天机器人</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Artificial-Intelligence#text-generation" target="_blank">✍️ 文本生成</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Artificial-Intelligence#image-generation" target="_blank">🎨 图像生成</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Artificial-Intelligence#tools" target="_blank">🛠️ AI工具</a></li>
+                </ul>
+            </div>
+            
+            <div class="card" id="streaming">
+                <div class="card-header">
+                    <div class="card-icon">📺</div>
+                    <div class="card-title">视频与动漫</div>
+                </div>
+                <p class="card-description">在线视频、视频下载、BT视频</p>
+                <ul class="card-links">
+                    <li><a href="categories/streaming.html">🎬 在线观看</a></li>
+                    <li><a href="categories/streaming.html#download">⬇️ 视频下载</a></li>
+                    <li><a href="categories/streaming.html#anime">🎌 动漫资源</a></li>
+                    <li><a href="categories/streaming.html#bt">🌀 BT下载</a></li>
+                </ul>
+            </div>
+            
+            <div class="card" id="music">
+                <div class="card-header">
+                    <div class="card-icon">🎵</div>
+                    <div class="card-title">音乐与播客</div>
+                </div>
+                <p class="card-description">在线音乐、音乐下载、BT音频</p>
+                <ul class="card-links">
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Music" target="_blank">🎧 在线收听</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Music#downloading" target="_blank">⬇️ 音乐下载</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Music#podcasts" target="_blank">🎙️ 播客</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Music#radio" target="_blank">📻 网络电台</a></li>
+                </ul>
+            </div>
+            
+            <div class="card" id="gaming">
+                <div class="card-header">
+                    <div class="card-icon">🎮</div>
+                    <div class="card-title">游戏与模拟</div>
+                </div>
+                <p class="card-description">游戏下载、ROM、游戏工具</p>
+                <ul class="card-links">
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Gaming" target="_blank">🎯 PC游戏</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Gaming#roms" target="_blank">📦 ROM资源</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Gaming#emulators" target="_blank">🕹️ 模拟器</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Gaming#tools" target="_blank">🔧 游戏工具</a></li>
+                </ul>
+            </div>
+            
+            <div class="card" id="reading">
+                <div class="card-header">
+                    <div class="card-icon">📖</div>
+                    <div class="card-title">阅读资源</div>
+                </div>
+                <p class="card-description">书籍、漫画、杂志、报纸</p>
+                <ul class="card-links">
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Reading" target="_blank">📚 电子书</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Reading#comics" target="_blank">🎨 漫画</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Reading#manga" target="_blank">📕 漫画</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Reading#magazines" target="_blank">📰 杂志报纸</a></li>
+                </ul>
+            </div>
+            
+            <div class="card" id="downloading">
+                <div class="card-header">
+                    <div class="card-icon">💾</div>
+                    <div class="card-title">下载工具</div>
+                </div>
+                <p class="card-description">下载网站、软件站、开放目录</p>
+                <ul class="card-links">
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Downloading" target="_blank">📥 下载网站</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Downloading#software" target="_blank">💻 软件下载</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Downloading#open-directories" target="_blank">📁 开放目录</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Downloading#download-managers" target="_blank">⚡ 下载管理器</a></li>
+                </ul>
+            </div>
+            
+            <div class="card" id="torrenting">
+                <div class="card-header">
+                    <div class="card-icon">🌀</div>
+                    <div class="card-title">BT下载</div>
+                </div>
+                <p class="card-description">BT客户端、BT网站、Tracker</p>
+                <ul class="card-links">
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Torrenting" target="_blank">🖥️ BT客户端</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Torrenting#sites" target="_blank">🌐 BT网站</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Torrenting#trackers" target="_blank">📊 Tracker</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Torrenting#tools" target="_blank">🛠️ BT工具</a></li>
+                </ul>
+            </div>
+            
+            <div class="card" id="educational">
+                <div class="card-header">
+                    <div class="card-icon">🎓</div>
+                    <div class="card-title">教育资源</div>
+                </div>
+                <p class="card-description">课程、纪录片、学习资源</p>
+                <ul class="card-links">
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Educational" target="_blank">📚 在线课程</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Educational#documentaries" target="_blank">🎬 纪录片</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Educational#textbooks" target="_blank">📖 教材</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Educational#languages" target="_blank">🌍 语言学习</a></li>
+                </ul>
+            </div>
+            
+            <div class="card" id="mobile">
+                <div class="card-header">
+                    <div class="card-icon">📱</div>
+                    <div class="card-title">移动设备</div>
+                </div>
+                <p class="card-description">应用、越狱、Android模拟器</p>
+                <ul class="card-links">
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Mobile" target="_blank">📱 Android应用</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Mobile#ios" target="_blank">🍎 iOS应用</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Mobile#jailbreaking" target="_blank">🔓 越狱</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Mobile#emulators" target="_blank">🎮 手机模拟器</a></li>
+                </ul>
+            </div>
+            
+            <div class="card" id="desktop">
+                <div class="card-header">
+                    <div class="card-icon">🖥️</div>
+                    <div class="card-title">Linux & macOS</div>
+                </div>
+                <p class="card-description">应用、软件站、游戏</p>
+                <ul class="card-links">
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Linux" target="_blank">🐧 Linux应用</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Linux#macos" target="_blank">🍎 macOS应用</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Linux#software-sites" target="_blank">💻 软件站</a></li>
+                    <li><a href="https://github.com/fmhy/FMHY/wiki/Linux#gaming" target="_blank">🎮 Linux游戏</a></li>
+                </ul>
+            </div>
+            
+            <div class="card" id="tools">
+                <div class="card-header">
+                    <div class="card-icon">🔧</div>
+                    <div class="card-title">实用工具</div>
+                </div>
+                <p class="card-description">网络工具、系统工具、音视频工具</p>
+                <ul class="card-links">
+                    <li><a href="https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/tools-index" target="_blank">🌐 网络工具</a></li>
+                    <li><a href="https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/tools-index#system-tools" target="_blank">⚙️ 系统工具</a></li>
+                    <li><a href="https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/tools-index#audio-tools" target="_blank">🎵 音频工具</a></li>
+                    <li><a href="https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/tools-index#video-tools" target="_blank">🎬 视频工具</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="disclaimer">
+                <h3>⚠️ 关于本镜像站</h3>
+                <p>
+                    这是 <a href="https://fmhy.net" target="_blank">FMHY (Free Media Heck Yeah)</a> 的中文镜像站。<br>
+                    镜像时间：2026-03-31<br>
+                    本镜像站仅用于个人学习和备份目的，所有内容均来源于官方 FMHY 仓库。<br>
+                    如有问题，请访问 <a href="https://fmhy.net" target="_blank">官方网站</a> 获取最新信息。
+                </p>
+            </div>
+            <p style="color: #666;">© 2026 FMHY 中文镜像站 | 部署于 Cloudflare Pages | 完全本地化，极速访问</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.getElementById('search-input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+        
+        document.querySelectorAll('.quick-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetCard = document.getElementById(targetId);
+                if (targetCard) {
+                    const searchTerm = targetCard.querySelector('.card-title').textContent;
+                    document.getElementById('search-input').value = searchTerm;
+                    
+                    const cards = document.querySelectorAll('.card');
+                    cards.forEach(card => {
+                        if (card.id === targetId) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                    
+                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

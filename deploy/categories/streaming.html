@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频与动漫 | FMHY 中文镜像站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .mirror-badge {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            font-size: 2em;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .site-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .site-card {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .site-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .site-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .site-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .site-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .site-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .disclaimer {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+            border-left: 4px solid #f5576c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: left;
+        }
+        
+        .disclaimer h3 {
+            color: #d32f2f;
+            margin-bottom: 10px;
+        }
+        
+        .disclaimer p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .site-list {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            header {
+                padding: 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="mirror-badge">📡 中文镜像站</div>
+            <h1><span class="logo">📺</span> 视频与动漫</h1>
+            <p class="subtitle">在线视频、视频下载、BT视频</p>
+            <a href="../index.html" class="back-link">🏠 返回主页</a>
+        </header>
+        
+        <div class="section">
+            <h2>🎬 在线观看</h2>
+            <div class="site-list">
+                <div class="site-card">
+                    <h3>Netflix</h3>
+                    <p>全球最大的流媒体平台，提供大量电影、电视剧和原创内容。</p>
+                    <a href="https://www.netflix.com" target="_blank" class="site-link">访问网站</a>
+                </div>
+                <div class="site-card">
+                    <h3>YouTube</h3>
+                    <p>全球最大的视频分享平台，包含各种类型的视频内容。</p>
+                    <a href="https://www.youtube.com" target="_blank" class="site-link">访问网站</a>
+                </div>
+                <div class="site-card">
+                    <h3>B站</h3>
+                    <p>中国领先的年轻人文化社区，包含大量动画、游戏、音乐等内容。</p>
+                    <a href="https://www.bilibili.com" target="_blank" class="site-link">访问网站</a>
+                </div>
+                <div class="site-card">
+                    <h3>爱奇艺</h3>
+                    <p>中国领先的视频平台，提供电影、电视剧、综艺等内容。</p>
+                    <a href="https://www.iqiyi.com" target="_blank" class="site-link">访问网站</a>
+                </div>
+                <div class="site-card">
+                    <h3>腾讯视频</h3>
+                    <p>中国领先的视频平台，提供电影、电视剧、综艺等内容。</p>
+                    <a href="https://v.qq.com" target="_blank" class="site-link">访问网站</a>
+                </div>
+                <div class="site-card">
+                    <h3>优酷</h3>
+                    <p>中国领先的视频平台，提供电影、电视剧、综艺等内容。</p>
+                    <a href="https://www.youku.com" target="_blank" class="site-link">访问网站</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="download">
+            <h2>⬇️ 视频下载</h2>
+            <div class="site-list">
+                <div class="site-card">
+                    <h3>迅雷</h3>
+                    <p>中国领先的下载工具，支持多种协议和加速功能。</p>
+                    <a href="https://www.xunlei.com" target="_blank" class="site-link">访问网站</a>
+                </div>
+                <div class="site-card">
+                    <h3>IDM</h3>
+                    <p>Internet Download Manager，全球领先的下载管理器。</p>
+                    <a href="https://www.internetdownloadmanager.com" target="_blank" class="site-link">访问网站</a>
+                </div>
+                <div class="site-card">
+                    <h3>Motrix</h3>
+                    <p>开源的下载工具，支持多种协议，界面美观。</p>
+                    <a href="https://motrix.app" target="_blank" class="site-link">访问网站</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="anime">
+            <h2>🎌 动漫资源</h2>
+            <div class="site-list">
+                <div class="site-card">
+                    <h3>AcFun</h3>
+                    <p>中国领先的弹幕视频网站，包含大量动漫内容。</p>
+                    <a href="https://www.acfun.cn" target="_blank" class="site-link">访问网站</a>
+                </div>
+                <div class="site-card">
+                    <h3>樱花动漫</h3>
+                    <p>提供大量动漫资源的网站，更新及时。</p>
+                    <a href="https://www.yhdmz.com" target="_blank" class="site-link">访问网站</a>
+                </div>
+                <div class="site-card">
+                    <h3>动漫花园</h3>
+                    <p>专注于动漫资源的网站，包含各种动漫下载。</p>
+                    <a href="https://www.dmhy.org" target="_blank" class="site-link">访问网站</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="bt">
+            <h2>🌀 BT下载</h2>
+            <div class="site-list">
+                <div class="site-card">
+                    <h3>磁力猫</h3>
+                    <p>磁力链接搜索引擎，提供大量资源。</p>
+                    <a href="https://www.cilimao.me" target="_blank" class="site-link">访问网站</a>
+                </div>
+                <div class="site-card">
+                    <h3>种子搜索</h3>
+                    <p>综合性的BT种子搜索引擎。</p>
+                    <a href="https://www.bt4g.org" target="_blank" class="site-link">访问网站</a>
+                </div>
+                <div class="site-card">
+                    <h3>迅雷下载</h3>
+                    <p>提供各种资源的下载平台。</p>
+                    <a href="https://www.xunleibbs.com" target="_blank" class="site-link">访问网站</a>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="disclaimer">
+                <h3>⚠️ 关于本镜像站</h3>
+                <p>
+                    这是 <a href="https://fmhy.net" target="_blank">FMHY (Free Media Heck Yeah)</a> 的中文镜像站。<br>
+                    镜像时间：2026-03-31<br>
+                    本镜像站仅用于个人学习和备份目的，所有内容均来源于官方 FMHY 仓库。<br>
+                    如有问题，请访问 <a href="https://fmhy.net" target="_blank">官方网站</a> 获取最新信息。
+                </p>
+            </div>
+            <p style="color: #666;">© 2026 FMHY 中文镜像站 | 部署于 Cloudflare Pages | 完全本地化，极速访问</p>
+        </footer>
+    </div>
+</body>
+</html>
