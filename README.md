@@ -1,153 +1,25 @@
-# [📚  Beginners Guide](https://fmhy.net/beginners-guide)
+# FMHY 镜像站
 
-**A Guide for Beginners + FAQs**
+这是 [FMHY (Free Media Heck Yeah)](https://fmhy.net) 的个人镜像站。
 
-***
-***
+## 镜像站信息
+- **原站链接**：[https://fmhy.net](https://fmhy.net)
+- **镜像时间**：2026-03-31
+- **部署平台**：Cloudflare Pages
 
-# [📛 Adblocking / Privacy](https://github.com/fmhy/FMHY/wiki/Adblock)
+## 关于本镜像站
+- 本镜像站仅用于个人学习和备份目的
+- 所有内容均来源于官方 FMHY 仓库
+- 本镜像站会定期同步官方仓库更新
 
-**Adblocking, Privacy, VPNs, Proxies, Antivirus**
+## 访问链接
+- 主站：[https://fmhyzhiyuan.pages.dev](https://fmhyzhiyuan.pages.dev)（使用 Cloudflare Pages 提供的域名）
 
-***
-***
+## 如何使用
+1. 浏览本镜像站获取免费资源链接
+2. 如有问题，请访问官方网站获取最新信息
+3. 本镜像站仅供参考，官方网站为准
 
-# [🤖 Artificial Intelligence](https://github.com/fmhy/FMHY/wiki/Artificial-Intelligence)
+---
 
-**Chat Bots, Text Generators, Image Generators, Chatbot Tools**
-
-***
-***
-
-# [📺 Movies / TV / Anime](https://github.com/fmhy/FMHY/wiki/Streaming)
-
-**Stream Videos, Download Videos, Torrent Videos**
-
-***
-***
-
-# [🎵 Music / Podcasts / Radio](https://github.com/fmhy/FMHY/wiki/Music)
-
-**Stream Audio, Download Audio, Torrent Audio**
-
-***
-***
-
-# [🎮 Gaming / Emulation](https://github.com/fmhy/FMHY/wiki/Gaming)
-
-**Download Games, ROMs, Gaming Tools**
-
-***
-***
-
-# [📗 Books / Comics / Manga](https://github.com/fmhy/FMHY/wiki/Reading)
-
-**Books, Comics, Magazines, Newspapers**
-
-***
-***
-
-# [💾 Downloading](https://github.com/fmhy/FMHY/wiki/Downloading)
-
-**Download Sites, Software Sites, Open Directories**
-
-***
-***
-
-# [🌀 Torrenting](https://github.com/fmhy/FMHY/wiki/Torrenting)
-
-**Torrent Clients, Torrent Sites, Trackers**
-
-***
-***
-
-# [🧠 Educational](https://github.com/fmhy/FMHY/wiki/Educational)
-
-**Courses, Documentaries, Learning Resources**
-
-***
-***
-
-# [🔧 Tools](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/tools-index)
-
-**Internet Tools, System Tools, Audio Tools, Video Tools**
-
-***
-***
-
-# [📱 Android / iOS](https://github.com/fmhy/FMHY/wiki/Mobile)
-
-**Apps, Jailbreaking, Android Emulators**
-
-***
-***
-
-# [🐧 Linux / macOS](https://github.com/fmhy/FMHY/wiki/Linux)
-
-**Apps, Software Sites, Gaming**
-
-***
-***
-
-# [🌏 Non-English](https://github.com/fmhy/FMHY/wiki/Non-Eng)
-
-**International Piracy Sites** 
-
-***
-***
-
-# [📂 Miscellaneous](https://github.com/fmhy/FMHY/wiki/Misc)
-
-**Extensions, Indexes, News, Health, Food, Fun**
-
-***
-***
-
-# [📑 Changelog](https://www.reddit.com/r/FREEMEDIAHECKYEAH/comments/1pl8vl0/fmhy_changelog/)
-
-**Recent Additions and Updates**
-
-***
-***
-
-# [🔒 Backups](https://github.com/fmhy/FMHY/wiki/Backups)
-
-**FMHY Backups**
-
-***
-***
-
-# [💬 Discord](https://rentry.co/fmhy-invite)
-
-**Chat, Get Help, Suggest Sites**
-
-***
-***
-
-# [➕️ More Sections](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/more-sections)
-
-***
-***
-
-**[Search FMHY](https://redd.it/105xraz)** - Search the Entire Wiki
-
-**[Edit FMHY](https://fmhy.net/other/contributing)** - Make Changes to the Wiki
-
-**[Selfhost FMHY](https://fmhy.net/other/selfhosting)** - FMHY Selfhosting Guide
-
-**[Site Hunting Guide](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/find-new-sites)** - Help Find New Sites
-
-***
-***
-
-**Emoji Legend:**
-
-🌐 - 3rd Party Indexes
-
-↪️ - Storage Page Links
-
-⭐ - Community Recommendations
-
-***
-
-[made with ❤️](https://fmhy.net/feedback)
+**免责声明**：本镜像站仅用于个人学习和备份，不承担任何法律责任。
